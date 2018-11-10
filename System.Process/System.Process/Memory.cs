@@ -75,6 +75,60 @@ namespace System.Process
             Unmanaged.WinAPI.ReadProcessMemory(p_obj.Handle, BaseAdr, MemorySizeBuffer, MemorySizeBuffer.Length, out out_size);
             return MemorySizeBuffer;
         }
+
+        public static byte[] ReadByteArrayByLength(byte[] refByteArray, int length, long index)
+        {
+            byte[] array = new byte[length];
+            int num = 0;
+            for (long num2 = index; num2 < (long)refByteArray.Length; num2 += 1L)
+            {
+                array[num] = refByteArray[(int)(checked((IntPtr)num2))];
+                num++;
+                if (num == length)
+                {
+                    break;
+                }
+            }
+            return array;
+        }
+
+        public static long[] FindPattern(byte[] RefByteArray, byte[] Pattern, string mask, long BASE)
+        {
+            if (Pattern.Length != mask.Length)
+            {
+                return new long[0];
+            }
+            long num = 0L;
+            int num2 = 0;
+            List<long> list = new List<long>();
+            for (int i = 0; i < RefByteArray.Length; i++)
+            {
+                byte[] array = ReadByteArrayByLength(RefByteArray, Pattern.Length, num);
+                for (int j = 0; j < array.Length; j++)
+                {
+                    if (mask[j] == '?')
+                    {
+                        num2++;
+                    }
+                    else if (num2 == Pattern.Length)
+                    {
+                        num2 = 0;
+                        list.Add(BASE + num - (long)Pattern.Length);
+                    }
+                    else
+                    {
+                        if (array[j] != Pattern[j])
+                        {
+                            num2 = 0;
+                            break;
+                        }
+                        num2++;
+                    }
+                }
+                num += (long)Pattern.Length;
+            }
+            return list.ToArray();
+        }
         #endregion
 
         #region WRITE
