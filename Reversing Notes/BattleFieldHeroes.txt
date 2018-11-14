@@ -1,0 +1,53 @@
+public class PlayerManager
+        {
+            public static IntPtr PlayerMangerPtr = (IntPtr)0x11FD0B4;
+ 
+            public static int PlayerEntry = 0x8;
+            public static int PlayerCount = 0x14;
+            public static int LocalPlayer = 0x6C;
+ 
+            public static int PlayerLinkedList = 0x58;
+        }
+ 
+        public class Player
+        {
+            public static int SoundObjectNode = 0xA4;
+            public static int Position = 0x684;
+            public static int AmmoInClip = 0x28C;
+            public static int Ping = 0x184;
+            public static int Team = 0x164; //1 = nat, 2 = royal
+        }
+ 
+        public class ClassManager
+        {
+            public static IntPtr ClassMangerPtr = (IntPtr)0x11DF160;
+            public static int ClassLinkedList = 0x34;
+        }
+ 
+        public class SoundObjectNode
+        {
+            public static int Soldier = 0x4;
+        }
+ 
+        public class Soldier
+        {
+        }
+ 
+        public class PlayerLinkedListNode
+        {
+            public static int Node0 = 0x0;
+            public static int Node1 = 0x4;
+            public static int Node2 = 0x8;
+ 
+            public static int Player = 0x10;
+        }
+ 
+        public class ClassLinkedListNode
+        {
+            public static int Node0 = 0x0;
+            public static int Node1 = 0x4;
+            public static int Node2 = 0x8;
+ 
+            public static int ClassName = 0x10;
+            public static int Pointer = 0x28;
+        }
