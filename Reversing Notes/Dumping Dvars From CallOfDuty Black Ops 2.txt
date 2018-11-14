@@ -1,0 +1,24 @@
+    //this is how i iterated over every single dvar stored in the games .data section
+	for (int i = 0; i < 3019; i++)
+	{
+		long num = (long)(43996488 + i * 96);
+		string arg = this.Memory.Read<string>((long)this.Memory.Read<int>(num, 4), 4);
+		int num2 = this.Memory.Read<int>(num + 16L, 4);
+		long num3 = num + 24L;
+		this.DvarList = this.DvarList + string.Format("{0} : {1} --> 0x{2}", arg, Enum.GetName(typeof(Form1.DvarType), num2), num3.ToString("X")) + "\n";
+	}
+	
+//dvar data type classification
+private enum DvarType
+{
+	
+	Bool = 1,
+	Float = 2,
+	Vec2 = 3,
+	Vec3 = 4,
+	Int = 5,
+	Enum = 6,
+	String = 7,
+	Color = 8,
+	DevTweak = 9
+}
