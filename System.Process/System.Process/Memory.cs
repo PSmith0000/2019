@@ -97,7 +97,7 @@ namespace System.Process
             if (Pattern.Length != mask.Length)
             {
                 return new long[0];
-            }
+            }  
             long num = 0L;
             int num2 = 0;
             List<long> list = new List<long>();
