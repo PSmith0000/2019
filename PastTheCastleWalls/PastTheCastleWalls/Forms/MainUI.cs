@@ -58,8 +58,6 @@ namespace PastTheCastleWalls.Forms
                 {
                     pBox.Items.Add(x.Gamertag);
                 });
-
-                
             }
         }
 
@@ -97,6 +95,11 @@ namespace PastTheCastleWalls.Forms
         private void kill_a_m_Click(object sender, EventArgs e)
         {
             Server.KillAllMonsters();
+        }
+
+        private void instakillcb_CheckedChanged(object sender, EventArgs e)
+        {
+            LocalPlayer.setDamage();
         }
     }
 }

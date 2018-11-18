@@ -40,6 +40,7 @@ namespace PastTheCastleWalls
         public static void ForceDragon()
         {
             EnemyManager.Instance.ForceDragonSpawn(DragonTypeEnum.SKELETON);
+            
         }
 
         public static void KillAllMonsters()

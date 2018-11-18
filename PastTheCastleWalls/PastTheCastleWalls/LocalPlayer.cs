@@ -39,7 +39,6 @@ namespace PastTheCastleWalls
         public static void SetName(string name)
         {
             GameWorld.instance.MyNetworkGamer.Gamertag = name;
-
         }
 
         public static void SetSpeed(float amt)
@@ -64,9 +63,10 @@ namespace PastTheCastleWalls
             GameWorld.instance.PlayerStats.UndeadDragonKills = 1;
         }
 
-        public static void Aimbot()
+        public static void setDamage(float dmg = float.MaxValue)
         {
-          
+            var _class = (DNA.CastleMinerZ.Inventory.InventoryItem.InventoryItemClass)System.Reflection.Assembly.GetEntryAssembly().GetType("DNA.CastleMinerZ.Inventory.InventoryItem").GetField("_class", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(LPlayer.PlayerInventory.ActiveInventoryItem);
+            _class.EnemyDamage = dmg;
         }
         public void HandleMessage(GameMessageType type, object data, object sender)
         {

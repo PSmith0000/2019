@@ -7,3 +7,10 @@ C:\Users\prest\source\repos\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Releas
 C:\Users\prest\source\repos\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Release\PastTheCastleWalls.csproj.CopyComplete
 C:\Users\prest\source\repos\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Release\PastTheCastleWalls.dll
 C:\Users\prest\source\repos\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Release\PastTheCastleWalls.pdb
+C:\Users\prest\Documents\GitHub\2019\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Release\PastTheCastleWalls.csprojAssemblyReference.cache
+C:\Users\prest\Documents\GitHub\2019\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Release\PastTheCastleWalls.Forms.MainUI.resources
+C:\Users\prest\Documents\GitHub\2019\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Release\PastTheCastleWalls.csproj.GenerateResource.cache
+C:\Users\prest\Documents\GitHub\2019\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Release\PastTheCastleWalls.csproj.CoreCompileInputs.cache
+C:\Users\prest\Documents\GitHub\2019\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Release\PastTheCastleWalls.csproj.CopyComplete
+C:\Users\prest\Documents\GitHub\2019\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Release\PastTheCastleWalls.dll
+C:\Users\prest\Documents\GitHub\2019\PastTheCastleWalls\PastTheCastleWalls\obj\x86\Release\PastTheCastleWalls.pdb

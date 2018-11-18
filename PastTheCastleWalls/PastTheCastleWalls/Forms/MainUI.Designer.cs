@@ -43,6 +43,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.spnDrag = new System.Windows.Forms.Button();
             this.kill_a_m = new System.Windows.Forms.Button();
+            this.instakillcb = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.speedMPBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,11 +183,23 @@
             this.kill_a_m.UseVisualStyleBackColor = true;
             this.kill_a_m.Click += new System.EventHandler(this.kill_a_m_Click);
             // 
+            // instakillcb
+            // 
+            this.instakillcb.AutoSize = true;
+            this.instakillcb.Location = new System.Drawing.Point(179, 115);
+            this.instakillcb.Name = "instakillcb";
+            this.instakillcb.Size = new System.Drawing.Size(82, 21);
+            this.instakillcb.TabIndex = 13;
+            this.instakillcb.Text = "Insta Kill";
+            this.instakillcb.UseVisualStyleBackColor = true;
+            this.instakillcb.CheckedChanged += new System.EventHandler(this.instakillcb_CheckedChanged);
+            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 270);
+            this.Controls.Add(this.instakillcb);
             this.Controls.Add(this.kill_a_m);
             this.Controls.Add(this.spnDrag);
             this.Controls.Add(this.checkBox1);
@@ -224,5 +237,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button spnDrag;
         private System.Windows.Forms.Button kill_a_m;
+        private System.Windows.Forms.CheckBox instakillcb;
     }
 }
