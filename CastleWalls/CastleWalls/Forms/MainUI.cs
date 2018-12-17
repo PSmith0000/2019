@@ -1,5 +1,6 @@
 ﻿using DNA.CastleMinerZ;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CastleWalls.Forms
@@ -28,7 +29,7 @@ namespace CastleWalls.Forms
                     LocalPlayer.RefillHPSP();
                 }
 
-                if (GameWorld.instance.MyNetworkGamer != null)
+                if (rPidCB.Checked && GameWorld.instance.MyNetworkGamer != null)
                 {
                     LocalPlayer.RandomizeID();
                 }
@@ -123,7 +124,13 @@ namespace CastleWalls.Forms
 
         private void pSpeedTB_Scroll(object sender, EventArgs e)
         {
-            LocalPlayer.SetSpeed(this.pSpeedTB.Value);
+            LocalPlayer.SetSpeed(pSpeedTB.Value);
+        }
+
+        private void IdStealBtn_Click(object sender, EventArgs e)
+        {
+            byte id = Server.GetPlayers().Where(x => x.Gamertag == PlayerSelect.Text).FirstOrDefault().Id;
+            LocalPlayer.RandomizeID(id);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace CastleWalls
 
         public static int JmpCount { set { LPlayer.JumpCountLimit = value; } }
 
-        public static void RefillHPSP(float amt = float.MaxValue)
+        public static void RefillHPSP(float amt = float.MaxValue / 4)
         {
             GameWorld.instance.GameScreen.HUD.PlayerHealth = amt;
             GameWorld.instance.GameScreen.HUD.PlayerStamina = amt;

@@ -56,6 +56,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pSpeedTB = new System.Windows.Forms.TrackBar();
             this.PlayerSpeedLbl = new System.Windows.Forms.Label();
+            this.rPidCB = new System.Windows.Forms.CheckBox();
+            this.IdStealBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -154,6 +156,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.IdStealBtn);
             this.groupBox2.Controls.Add(this.SwnHellBtn);
             this.groupBox2.Controls.Add(this.KillrpBtn);
             this.groupBox2.Controls.Add(this.CpyItemsBtn);
@@ -216,6 +219,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.rPidCB);
             this.groupBox3.Controls.Add(this.pJoinCB);
             this.groupBox3.Controls.Add(this.SpawnDragoonBtn);
             this.groupBox3.Controls.Add(this.KillAllMonstersBtn);
@@ -338,6 +342,26 @@
             this.PlayerSpeedLbl.TabIndex = 5;
             this.PlayerSpeedLbl.Text = "Player Speed";
             // 
+            // rPidCB
+            // 
+            this.rPidCB.AutoSize = true;
+            this.rPidCB.Location = new System.Drawing.Point(7, 144);
+            this.rPidCB.Name = "rPidCB";
+            this.rPidCB.Size = new System.Drawing.Size(109, 21);
+            this.rPidCB.TabIndex = 5;
+            this.rPidCB.Text = "Random PID";
+            this.rPidCB.UseVisualStyleBackColor = true;
+            // 
+            // IdStealBtn
+            // 
+            this.IdStealBtn.Location = new System.Drawing.Point(6, 82);
+            this.IdStealBtn.Name = "IdStealBtn";
+            this.IdStealBtn.Size = new System.Drawing.Size(145, 23);
+            this.IdStealBtn.TabIndex = 5;
+            this.IdStealBtn.Text = "ID Theft";
+            this.IdStealBtn.UseVisualStyleBackColor = true;
+            this.IdStealBtn.Click += new System.EventHandler(this.IdStealBtn_Click);
+            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -394,5 +418,7 @@
         private System.Windows.Forms.Button SwnHellBtn;
         private System.Windows.Forms.TrackBar pSpeedTB;
         private System.Windows.Forms.Label PlayerSpeedLbl;
+        private System.Windows.Forms.Button IdStealBtn;
+        private System.Windows.Forms.CheckBox rPidCB;
     }
 }
