@@ -18,7 +18,7 @@ namespace CastleWalls
 
         public static int JmpCount { set { LPlayer.JumpCountLimit = value; } }
 
-        public static void RefillHPSP(float amt = 1f)
+        public static void RefillHPSP(float amt = float.MaxValue)
         {
             GameWorld.instance.GameScreen.HUD.PlayerHealth = amt;
             GameWorld.instance.GameScreen.HUD.PlayerStamina = amt;
@@ -28,11 +28,10 @@ namespace CastleWalls
 
         public static void ForceHostMigration()
         {
-            GameWorld.instance.CurrentNetworkSession.AllowHostMigration = true;
-            AppointServerMessage.Send(GameWorld.instance.MyNetworkGamer, GameWorld.instance.MyNetworkGamer.Id);
-            if (GameWorld.instance.IsGameHost)
+            if (!GameWorld.instance.IsGameHost)
             {
-                Console.WriteLine("Forced Host Migration!");
+                GameWorld.instance.CurrentNetworkSession.AllowHostMigration = true;
+                AppointServerMessage.Send(GameWorld.instance.MyNetworkGamer, GameWorld.instance.MyNetworkGamer.Id);
             }
         }
 

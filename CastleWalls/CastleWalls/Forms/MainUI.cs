@@ -18,7 +18,7 @@ namespace CastleWalls.Forms
             {
                 #region Local
 
-                if (HostCB.Checked && !GameWorld.instance.IsGameHost)
+                if (HostCB.Checked)
                 {
                     LocalPlayer.ForceHostMigration();
                 }
@@ -115,6 +115,15 @@ namespace CastleWalls.Forms
         private void SwnHellBtn_Click(object sender, EventArgs e)
         {
             Server.SpawnHell(PlayerSelect.Text);
+        }
+
+        private void HostCB_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void pSpeedTB_Scroll(object sender, EventArgs e)
+        {
+            LocalPlayer.SetSpeed(this.pSpeedTB.Value);
         }
     }
 }

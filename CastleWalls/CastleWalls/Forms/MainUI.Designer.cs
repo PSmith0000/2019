@@ -54,10 +54,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.PIDlbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pSpeedTB = new System.Windows.Forms.TrackBar();
+            this.PlayerSpeedLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pSpeedTB)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -95,6 +98,7 @@
             this.HostCB.TabIndex = 1;
             this.HostCB.Text = "Force Host";
             this.HostCB.UseVisualStyleBackColor = true;
+            this.HostCB.CheckedChanged += new System.EventHandler(this.HostCB_CheckedChanged);
             // 
             // MineCB
             // 
@@ -315,11 +319,32 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "PID:";
             // 
+            // pSpeedTB
+            // 
+            this.pSpeedTB.Location = new System.Drawing.Point(193, 382);
+            this.pSpeedTB.Minimum = 1;
+            this.pSpeedTB.Name = "pSpeedTB";
+            this.pSpeedTB.Size = new System.Drawing.Size(373, 56);
+            this.pSpeedTB.TabIndex = 4;
+            this.pSpeedTB.Value = 1;
+            this.pSpeedTB.Scroll += new System.EventHandler(this.pSpeedTB_Scroll);
+            // 
+            // PlayerSpeedLbl
+            // 
+            this.PlayerSpeedLbl.AutoSize = true;
+            this.PlayerSpeedLbl.Location = new System.Drawing.Point(193, 362);
+            this.PlayerSpeedLbl.Name = "PlayerSpeedLbl";
+            this.PlayerSpeedLbl.Size = new System.Drawing.Size(93, 17);
+            this.PlayerSpeedLbl.TabIndex = 5;
+            this.PlayerSpeedLbl.Text = "Player Speed";
+            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PlayerSpeedLbl);
+            this.Controls.Add(this.pSpeedTB);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -334,7 +359,9 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pSpeedTB)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -365,5 +392,7 @@
         private System.Windows.Forms.Label hNameLbl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SwnHellBtn;
+        private System.Windows.Forms.TrackBar pSpeedTB;
+        private System.Windows.Forms.Label PlayerSpeedLbl;
     }
 }
