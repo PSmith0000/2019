@@ -11,6 +11,7 @@ namespace CastleWalls.Forms
         {
             InitializeComponent();
             Timer.Start();
+            GameWorld.ChangeGameTitle("CastleMinerZ <> Cheat by CnoEvil <:3)~");
         }
 
         private void Timer_Tick(object sender, EventArgs e)
