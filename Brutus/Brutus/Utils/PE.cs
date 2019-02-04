@@ -8,7 +8,7 @@ namespace Brutus.Utils
     {
         internal static bool ValidDotNetPE(string file)
         {
-            bool state = false;
+            bool bstate = false;
             ushort dataDictionaryStart;
 
             uint[] dataDictionaryRVA = new uint[16];
@@ -34,11 +34,11 @@ namespace Brutus.Utils
 
             if (dataDictionaryRVA[14] != 0)
             {
-                state = true;
+                bstate = true;
             }
 
             fs.Close();
-            return state;
+            return bstate;
         }
     }
 }
