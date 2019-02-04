@@ -1,0 +1,8 @@
+C:\Users\prest\Desktop\Brutus\TestPlugin\bin\Debug\TestPlugin.dll
+C:\Users\prest\Desktop\Brutus\TestPlugin\bin\Debug\TestPlugin.pdb
+C:\Users\prest\Desktop\Brutus\TestPlugin\obj\Debug\TestPlugin.csproj.CoreCompileInputs.cache
+C:\Users\prest\Desktop\Brutus\TestPlugin\obj\Debug\TestPlugin.dll
+C:\Users\prest\Desktop\Brutus\TestPlugin\obj\Debug\TestPlugin.pdb
+C:\Users\prest\Desktop\Brutus\TestPlugin\obj\Debug\TestPlugin.csprojAssemblyReference.cache
+C:\Users\prest\Desktop\Brutus\Brutus\bin\Debug\Plugins\TestPlugin.dll
+C:\Users\prest\Desktop\Brutus\Brutus\bin\Debug\Plugins\TestPlugin.pdb
