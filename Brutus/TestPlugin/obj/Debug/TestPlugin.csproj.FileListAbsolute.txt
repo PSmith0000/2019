@@ -6,3 +6,9 @@ C:\Users\prest\Desktop\Brutus\TestPlugin\obj\Debug\TestPlugin.pdb
 C:\Users\prest\Desktop\Brutus\TestPlugin\obj\Debug\TestPlugin.csprojAssemblyReference.cache
 C:\Users\prest\Desktop\Brutus\Brutus\bin\Debug\Plugins\TestPlugin.dll
 C:\Users\prest\Desktop\Brutus\Brutus\bin\Debug\Plugins\TestPlugin.pdb
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\bin\Debug\Plugins\TestPlugin.dll
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\bin\Debug\Plugins\TestPlugin.pdb
+C:\Users\prest\Documents\GitHub\2019\Brutus\TestPlugin\obj\Debug\TestPlugin.csprojAssemblyReference.cache
+C:\Users\prest\Documents\GitHub\2019\Brutus\TestPlugin\obj\Debug\TestPlugin.csproj.CoreCompileInputs.cache
+C:\Users\prest\Documents\GitHub\2019\Brutus\TestPlugin\obj\Debug\TestPlugin.dll
+C:\Users\prest\Documents\GitHub\2019\Brutus\TestPlugin\obj\Debug\TestPlugin.pdb

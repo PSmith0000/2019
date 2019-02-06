@@ -40,16 +40,20 @@ namespace Brutus
             else
             {
                 Notify.BalloonTipText = "Were Working Hard!";
-                Notify.ShowBalloonTip(1000);
-                
+                Notify.ShowBalloonTip(200);
+
 
                 Task.Factory.StartNew(() => {
-                    while (!CombosTask.IsCompleted)
-                    {
-                        Thread.Sleep(100);
-                    }
+                while (!CombosTask.IsCompleted)
+                {
+                    Thread.Sleep(100);
+                }
                     Settings.Combos = CombosTask.Result;
-                    cCount.Text = Settings.Combos.Count.ToString();
+                    Utils.Utils.SafeInvoke(cCount, new Action(() => {
+                        cCount.Text = Settings.Combos.Count.ToString();
+                    }));
+                    Notify.BalloonTipText = "Combos Created!";
+                    Notify.ShowBalloonTip(200);
                 });
             }
             cCount.Text = Settings.Combos.Count.ToString();

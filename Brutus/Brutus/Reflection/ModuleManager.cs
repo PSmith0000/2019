@@ -23,9 +23,9 @@ namespace Brutus.Reflection
             if (Directory.Exists(Application.StartupPath + @"\Plugins"))
             {
                 Directory.GetFiles(Application.StartupPath + "\\Plugins", "*.dll").ToList().ForEach(plugin =>
-                {
+                {                 
                     if (Utils.PE.ValidDotNetPE(plugin))
-                    {
+                    {                       
                         var asmDef = AssemblyDefinition.ReadAssembly(plugin);
                         if (asmDef.MainModule.GetTypes().Where(x => x.Name == "BrutusMod").Count() != 0 && asmDef.MainModule.GetTypes().Where(x => x.Name == "BrutusMod").FirstOrDefault().Methods.Where(x => x.Name == "SendLogin").Count() != 0)
                         {
