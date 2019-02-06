@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Brutus
@@ -10,11 +13,18 @@ namespace Brutus
         internal static ListBox _Output { get; set; }
         internal static ComboBox _ModuleList { get; set; }
 
+        internal  static NotifyIcon Notify { get; set; }
         public MainUI()
         {
             InitializeComponent();
-            _Output = Output;
-            _ModuleList = comboBox1;
+            _Output = this.Output;
+            _ModuleList = this.comboBox1;
+            Notify = this.LoginFoundTip;
+
+
+            Notify.Icon = SystemIcons.Information;
+            Notify.BalloonTipText = "Loading Plugins..";
+            Notify.ShowBalloonTip(1000);
 
             Reflection.ModuleManager.LoadModules();
         }
@@ -22,7 +32,26 @@ namespace Brutus
         private void CreateCmbsBtn_Click(object sender, EventArgs e)
         {
             Utils.Utils.FileDialog.ShowDialog();
-            Settings.Combos = Utils.ComboGenerator.CreateFromFile(Utils.Utils.FileDialog.FileName);
+            var CombosTask = Utils.ComboGenerator.CreateFromFile(Utils.Utils.FileDialog.FileName);
+            if (CombosTask.IsCompleted)
+            {
+                Settings.Combos = CombosTask.Result;
+            }
+            else
+            {
+                Notify.BalloonTipText = "Were Working Hard!";
+                Notify.ShowBalloonTip(1000);
+                
+
+                Task.Factory.StartNew(() => {
+                    while (!CombosTask.IsCompleted)
+                    {
+                        Thread.Sleep(100);
+                    }
+                    Settings.Combos = CombosTask.Result;
+                    cCount.Text = Settings.Combos.Count.ToString();
+                });
+            }
             cCount.Text = Settings.Combos.Count.ToString();
         }
 

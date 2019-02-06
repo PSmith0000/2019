@@ -15,7 +15,7 @@ namespace Brutus.Modules
     /// </summary>
     internal class Router
     {
-        internal static string GATEWAY = NetworkInterface.GetAllNetworkInterfaces().FirstOrDefault().GetIPProperties().GatewayAddresses.FirstOrDefault().Address.MapToIPv4().ToString();
+        internal static string GATEWAY = NetworkInterface.GetAllNetworkInterfaces()[0].GetIPProperties().GatewayAddresses[1].Address.MapToIPv4().ToString();
         private static HttpClient http = new HttpClient();
         private static System.Net.Http.Headers.HttpResponseHeaders HEADER { get; set; }
         internal static string SendLogin(string userpass)

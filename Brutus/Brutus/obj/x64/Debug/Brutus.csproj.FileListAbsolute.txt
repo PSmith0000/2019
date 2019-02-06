@@ -1,0 +1,15 @@
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\bin\x64\Debug\Brutus.exe.config
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\bin\x64\Debug\Brutus.exe
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\bin\x64\Debug\Brutus.pdb
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\bin\x64\Debug\Mono.Cecil.dll
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\bin\x64\Debug\Mono.Cecil.Mdb.dll
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\bin\x64\Debug\Mono.Cecil.Pdb.dll
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\bin\x64\Debug\Mono.Cecil.Rocks.dll
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\obj\x64\Debug\Brutus.csprojAssemblyReference.cache
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\obj\x64\Debug\Brutus.MainUI.resources
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\obj\x64\Debug\Brutus.Properties.Resources.resources
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\obj\x64\Debug\Brutus.csproj.GenerateResource.cache
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\obj\x64\Debug\Brutus.csproj.CoreCompileInputs.cache
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\obj\x64\Debug\Brutus.csproj.CopyComplete
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\obj\x64\Debug\Brutus.exe
+C:\Users\prest\Documents\GitHub\2019\Brutus\Brutus\obj\x64\Debug\Brutus.pdb

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -37,6 +38,7 @@
             this.Output = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.UndPlugsBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.UndPlugsBtn = new System.Windows.Forms.Button();
+            this.LoginFoundTip = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -142,6 +144,16 @@
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // UndPlugsBtn
+            // 
+            this.UndPlugsBtn.Location = new System.Drawing.Point(3, 59);
+            this.UndPlugsBtn.Name = "UndPlugsBtn";
+            this.UndPlugsBtn.Size = new System.Drawing.Size(140, 27);
+            this.UndPlugsBtn.TabIndex = 5;
+            this.UndPlugsBtn.Text = "Unload Plugins";
+            this.UndPlugsBtn.UseVisualStyleBackColor = true;
+            this.UndPlugsBtn.Click += new System.EventHandler(this.UndPlugsBtn_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cCount);
@@ -216,15 +228,11 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // UndPlugsBtn
+            // LoginFoundTip
             // 
-            this.UndPlugsBtn.Location = new System.Drawing.Point(3, 59);
-            this.UndPlugsBtn.Name = "UndPlugsBtn";
-            this.UndPlugsBtn.Size = new System.Drawing.Size(140, 27);
-            this.UndPlugsBtn.TabIndex = 5;
-            this.UndPlugsBtn.Text = "Unload Plugins";
-            this.UndPlugsBtn.UseVisualStyleBackColor = true;
-            this.UndPlugsBtn.Click += new System.EventHandler(this.UndPlugsBtn_Click);
+            this.LoginFoundTip.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.LoginFoundTip.BalloonTipText = "Login Found!";
+            this.LoginFoundTip.Visible = true;
             // 
             // MainUI
             // 
@@ -265,6 +273,7 @@
         private System.Windows.Forms.Button LoadCmbsBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button UndPlugsBtn;
+        private System.Windows.Forms.NotifyIcon LoginFoundTip;
     }
 }
 

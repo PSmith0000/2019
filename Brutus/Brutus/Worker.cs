@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Brutus
 {
@@ -16,12 +17,13 @@ namespace Brutus
         internal static Task<List<string>> doWork(Type module)
         {
             return Task<List<string>>.Factory.StartNew(() => {
-                var SendLogin = module.GetMethod("SendLogin", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
+                var SendLogin = module.GetMethod("SendLogin", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic);
                 List<string> Logins = new List<string>();
                 Settings.Combos.ToList().ForEach(cmb => {
                     var result = (string)SendLogin.Invoke(null, new object[] {cmb});
-                    if (result != null) { Logins.Add(result); }
+                    if (result != null) { Logins.Add(result); MainUI.Notify.ShowBalloonTip(1); }
                 });
+                MainUI.Notify.BalloonTipText = "Login(s) Found!";
                 return Logins;
             });   
         }
@@ -57,8 +59,10 @@ namespace Brutus
                     if (login != null)
                     {
                         Logins.Add(login);
+                        MainUI.Notify.ShowBalloonTip(1000);
                     }
                 });
+                MainUI.Notify.BalloonTipText = "Login(s) Found!";
                 return Logins;
             });
         }

@@ -9,22 +9,27 @@ namespace Brutus.Utils
 {
     internal class ComboGenerator 
     {
-        public static List<string> CreateFromFile(string path)
+        public static Task<List<string>> CreateFromFile(string path)
         {
-            List<string> Combos = new List<string>();
-            if (!File.Exists(path))
-            {
-                return null;
-            }
-            List<string> Words = File.ReadAllLines(path).ToList();
-            for (int one = 0; one < Words.Count; one++)
-            {
-                for (int two = 1; two < Words.Count; two++)
+            return Task.Factory.StartNew(() => {
+                List<string> Combos = new List<string>();
+                if (!File.Exists(path))
                 {
-                    Combos.Add($"{Words[one]}:{Words[two]}");
+                    return null;
                 }
-            }
-            return Combos;
+                List<string> Words = File.ReadAllLines(path).ToList();
+                for (int one = 0; one < Words.Count; one++)
+                {
+                    for (int two = 1; two < Words.Count; two++)
+                    {
+                        var wordX = $"{Words[one]}:{Words[two]}";
+                        GC.AddMemoryPressure(Encoding.Default.GetByteCount(wordX)); //For Larger Lists
+                        Combos.Add(wordX);
+                    }
+                }
+                GC.Collect();
+                return Combos;
+            });
         }
     }
 }
