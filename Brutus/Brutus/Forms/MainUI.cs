@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Threading;
@@ -13,19 +12,19 @@ namespace Brutus
         internal static ListBox _Output { get; set; }
         internal static ComboBox _ModuleList { get; set; }
 
-        internal  static NotifyIcon Notify { get; set; }
+        internal static NotifyIcon Notify { get; set; }
+
         public MainUI()
         {
             InitializeComponent();
-            _Output = this.Output;
-            _ModuleList = this.comboBox1;
-            Notify = this.LoginFoundTip;
-
+            _Output = Output;
+            _ModuleList = comboBox1;
+            Notify = LoginFoundTip;
 
             Notify.Icon = SystemIcons.Information;
             Notify.BalloonTipText = "Loading Plugins..";
             Notify.ShowBalloonTip(1000);
-
+            MessageBox.Show(Modules.Router.GATEWAY);
             Reflection.ModuleManager.LoadModules();
         }
 
@@ -42,14 +41,15 @@ namespace Brutus
                 Notify.BalloonTipText = "Were Working Hard!";
                 Notify.ShowBalloonTip(200);
 
-
-                Task.Factory.StartNew(() => {
-                while (!CombosTask.IsCompleted)
+                Task.Factory.StartNew(() =>
                 {
-                    Thread.Sleep(100);
-                }
+                    while (!CombosTask.IsCompleted)
+                    {
+                        Thread.Sleep(100);
+                    }
                     Settings.Combos = CombosTask.Result;
-                    Utils.Utils.SafeInvoke(cCount, new Action(() => {
+                    Utils.Utils.SafeInvoke(cCount, new Action(() =>
+                    {
                         cCount.Text = Settings.Combos.Count.ToString();
                     }));
                     Notify.BalloonTipText = "Combos Created!";
@@ -93,7 +93,6 @@ namespace Brutus
 
         private void StopBtn_Click(object sender, EventArgs e)
         {
-
         }
 
         private void UndPlugsBtn_Click(object sender, EventArgs e)

@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace TestPlugin
+﻿namespace TestPlugin
 {
     public class BrutusMod
     {
-        static int i = 20;
+        private static int i = 20;
 
-        static string SendLogin(string userpass)
+        private static string SendLogin(string userpass)
         {
             i += i * 43;
             if (i % 3 == 0)

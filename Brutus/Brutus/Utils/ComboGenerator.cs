@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Brutus.Utils
 {
-    internal class ComboGenerator 
+    internal class ComboGenerator
     {
         public static Task<List<string>> CreateFromFile(string path)
         {
-            return Task.Factory.StartNew(() => {
+            return Task.Factory.StartNew(() =>
+            {
                 List<string> Combos = new List<string>();
                 if (!File.Exists(path))
                 {
@@ -23,7 +23,6 @@ namespace Brutus.Utils
                     for (int two = 1; two < Words.Count; two++)
                     {
                         var wordX = $"{Words[one]}:{Words[two]}";
-                        GC.AddMemoryPressure(Encoding.Default.GetByteCount(wordX)); //For Larger Lists
                         Combos.Add(wordX);
                     }
                 }

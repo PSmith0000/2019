@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Reflection;
-using System.Windows.Forms;
 
 namespace Brutus.Modules
 {
@@ -12,7 +8,6 @@ namespace Brutus.Modules
     {
         internal static List<Plugin> LoadedPlugins = new List<Plugin>();
     }
-
 
     internal class Plugin : MarshalByRefObject
     {
@@ -29,7 +24,7 @@ namespace Brutus.Modules
         {
             var one = CurrentAssembly.GetTypes()[0].GetMethod("SendLogin", BindingFlags.Static | BindingFlags.NonPublic);
 
-            return (string)one.Invoke(null, new object[] {combo});
+            return (string)one.Invoke(null, new object[] { combo });
         }
     }
 }

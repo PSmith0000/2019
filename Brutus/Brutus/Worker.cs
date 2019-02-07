@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Brutus
 {
-    class Worker
+    internal class Worker
     {
         /// <summary>
         /// For Modules that require just a Combo Parameter
@@ -16,16 +14,18 @@ namespace Brutus
         /// <returns></returns>
         internal static Task<List<string>> doWork(Type module)
         {
-            return Task<List<string>>.Factory.StartNew(() => {
+            return Task<List<string>>.Factory.StartNew(() =>
+            {
                 var SendLogin = module.GetMethod("SendLogin", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic);
                 List<string> Logins = new List<string>();
-                Settings.Combos.ToList().ForEach(cmb => {
-                    var result = (string)SendLogin.Invoke(null, new object[] {cmb});
+                Settings.Combos.ToList().ForEach(cmb =>
+                {
+                    var result = (string)SendLogin.Invoke(null, new object[] { cmb });
                     if (result != null) { Logins.Add(result); MainUI.Notify.ShowBalloonTip(1); }
                 });
                 MainUI.Notify.BalloonTipText = "Login(s) Found!";
                 return Logins;
-            });   
+            });
         }
 
         /// <summary>
@@ -36,10 +36,12 @@ namespace Brutus
         /// <returns></returns>
         internal static Task<List<string>> doWork(Type module, object[] Params)
         {
-            return Task<List<string>>.Factory.StartNew(() => {
+            return Task<List<string>>.Factory.StartNew(() =>
+            {
                 var SendLogin = module.GetMethod("SendLogin", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
                 List<string> Logins = new List<string>();
-                Settings.Combos.ToList().ForEach(cmb => {
+                Settings.Combos.ToList().ForEach(cmb =>
+                {
                     var args = Params.ToList();
                     args.Insert(0, cmb);
                     var result = (string)SendLogin.Invoke(null, args.ToArray());
@@ -49,12 +51,13 @@ namespace Brutus
             });
         }
 
-
         internal static Task<List<string>> doWork(Modules.Plugin plugin)
         {
-            return Task<List<string>>.Factory.StartNew(() => {
+            return Task<List<string>>.Factory.StartNew(() =>
+            {
                 List<string> Logins = new List<string>();
-                Settings.Combos.ToList().ForEach(cmb => {
+                Settings.Combos.ToList().ForEach(cmb =>
+                {
                     var login = plugin.SendLogin(cmb);
                     if (login != null)
                     {

@@ -1,6 +1,5 @@
 ﻿using Mono.Cecil;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -23,14 +22,14 @@ namespace Brutus.Reflection
             if (Directory.Exists(Application.StartupPath + @"\Plugins"))
             {
                 Directory.GetFiles(Application.StartupPath + "\\Plugins", "*.dll").ToList().ForEach(plugin =>
-                {                 
+                {
                     if (Utils.PE.ValidDotNetPE(plugin))
-                    {                       
+                    {
                         var asmDef = AssemblyDefinition.ReadAssembly(plugin);
                         if (asmDef.MainModule.GetTypes().Where(x => x.Name == "BrutusMod").Count() != 0 && asmDef.MainModule.GetTypes().Where(x => x.Name == "BrutusMod").FirstOrDefault().Methods.Where(x => x.Name == "SendLogin").Count() != 0)
                         {
                             var type = typeof(Brutus.Modules.Plugin);
-                            var p = (Brutus.Modules.Plugin)domain.CreateInstanceAndUnwrap(Assembly.GetAssembly(type).FullName, type.ToString(), false, BindingFlags.CreateInstance, null, new object[] {plugin, AppDomain.CurrentDomain}, null, null);
+                            var p = (Brutus.Modules.Plugin)domain.CreateInstanceAndUnwrap(Assembly.GetAssembly(type).FullName, type.ToString(), false, BindingFlags.CreateInstance, null, new object[] { plugin, AppDomain.CurrentDomain }, null, null);
                             MainUI._Output.Items.Add("Loaded Module: " + p.PluginName);
                             MainUI._ModuleList.Items.Add(p.PluginName);
                             Brutus.Modules.PluginManager.LoadedPlugins.Add(p);
@@ -56,7 +55,6 @@ namespace Brutus.Reflection
 
         private static void Domain_DomainUnload(object sender, EventArgs e)
         {
-          
             Modules.PluginManager.LoadedPlugins.Clear();
         }
     }
