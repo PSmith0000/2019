@@ -24,7 +24,6 @@ namespace Brutus
             Notify.Icon = SystemIcons.Information;
             Notify.BalloonTipText = "Loading Plugins..";
             Notify.ShowBalloonTip(1000);
-            MessageBox.Show(Modules.Router.GATEWAY);
             Reflection.ModuleManager.LoadModules();
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Brutus.Utils
 {
@@ -24,6 +25,7 @@ namespace Brutus.Utils
 
             fs.Position = dataDictionaryStart;
 
+
             for (int i = 0; i < 15; i++)
             {
                 dataDictionaryRVA[i] = reader.ReadUInt32();
@@ -35,6 +37,7 @@ namespace Brutus.Utils
             {
                 bstate = true;
             }
+
 
             fs.Close();
             return bstate;

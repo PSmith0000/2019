@@ -62,10 +62,10 @@ namespace Brutus
                     if (login != null)
                     {
                         Logins.Add(login);
-                        MainUI.Notify.ShowBalloonTip(1000);
                     }
                 });
                 MainUI.Notify.BalloonTipText = "Login(s) Found!";
+                MainUI.Notify.ShowBalloonTip(1000);
                 return Logins;
             });
         }

@@ -12,22 +12,26 @@ namespace Brutus.Utils
         {
             return Task.Factory.StartNew(() =>
             {
-                List<string> Combos = new List<string>();
-                if (!File.Exists(path))
+                if (File.Exists(path))
                 {
-                    return null;
-                }
-                List<string> Words = File.ReadAllLines(path).ToList();
-                for (int one = 0; one < Words.Count; one++)
-                {
-                    for (int two = 1; two < Words.Count; two++)
+                    List<string> Combos = new List<string>();
+                    if (!File.Exists(path))
                     {
-                        var wordX = $"{Words[one]}:{Words[two]}";
-                        Combos.Add(wordX);
+                        return null;
                     }
+                    List<string> Words = File.ReadAllLines(path).ToList();
+                    for (int one = 0; one < Words.Count; one++)
+                    {
+                        for (int two = 0; two < Words.Count; two++)
+                        {
+                            var wordX = $"{Words[one]}:{Words[two]}";
+                            Combos.Add(wordX);
+                        }
+                    }
+                    GC.Collect();
+                    return Combos;
                 }
-                GC.Collect();
-                return Combos;
+                return null;
             });
         }
     }

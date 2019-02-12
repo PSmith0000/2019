@@ -30,7 +30,7 @@ namespace Brutus.Modules
             message.Headers.Add("Authorization", "Basic " + auth);
             var response = http.SendAsync(message);
 
-            if (response.Result.StatusCode != HttpStatusCode.Unauthorized)
+            if (response.Result.StatusCode == HttpStatusCode.OK)
             {
                 HEADER = null;
                 return Encoding.Default.GetString(Convert.FromBase64String(auth));
