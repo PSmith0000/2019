@@ -31,7 +31,7 @@ namespace Brutus.Modules
         }
 
         /// <summary>
-        /// 
+        /// used to invoke a method in the loaded plugin.
         /// </summary>
         /// <param name="Type">The Type in which the method is Associated</param>
         /// <param name="Method">the method name</param>
@@ -39,16 +39,13 @@ namespace Brutus.Modules
         /// <param name="Params">method args</param>
         /// <param name="instance"></param>
         /// <returns></returns>
-        public object InvokeMethod(string Type, string Method, bool Returns = false, object[] Params = null, object instance = null)
+        public T InvokeMethod<T>(string Type, string Method, object[] Params = null, object instance = null)
         {
-            if (Returns)
+            if (typeof(T) != typeof(void))
             {
-                return CurrentAssembly.GetType(Type).GetMethod(Method).Invoke(instance, Params);
+                return (T)CurrentAssembly.GetType(Type).GetMethod(Method).Invoke(instance, Params);
             }
-            else
-            {
-                return CurrentAssembly.GetType(Type).GetMethod(Method).Invoke(instance, Params);
-            }
+            return (T)CurrentAssembly.GetType(Type).GetMethod(Method).Invoke(instance, Params);
         }
 
         public void Dispose()

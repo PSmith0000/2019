@@ -55,6 +55,9 @@ namespace Brutus.Reflection
 
         private static void Domain_DomainUnload(object sender, EventArgs e)
         {
+            Modules.PluginManager.LoadedPlugins.ForEach(x => {
+                x.Dispose();
+            });
             Modules.PluginManager.LoadedPlugins.Clear();
         }
     }

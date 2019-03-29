@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Brutus.Utils
@@ -17,6 +18,16 @@ namespace Brutus.Utils
             {
                 Func();
             }
+        }
+
+        internal static int ReadCombos(string FILE)
+        {
+            FileInfo fi = new FileInfo(FILE);
+            if (fi.Exists && fi.Extension == ".txt")
+            {
+                Settings.Combos.AddRange(File.ReadLines(FILE));
+            }
+            return Settings.Combos.Count;
         }
     }
 }

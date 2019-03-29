@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -75,19 +76,33 @@ namespace Brutus
         private static void Work(Modules.Plugin Mod)
         {
             var w = Worker.doWork(Mod);
-            w.Result.ForEach(x =>
+            if (w.Result.Count != 0)
             {
-                _Output.Items.Add("Successful: " + x);
-            });
+                w.Result.ForEach(x =>
+                {
+                    _Output.Items.Add("Successful: " + x);
+                });
+            }
+            else
+            {
+                _Output.Items.Add("Task Completed, No Logins Found :(");
+            }
         }
 
         private static void Work(Type Mod)
         {
             var w = Worker.doWork(Mod);
-            w.Result.ForEach(x =>
+            if (w.Result.Count != 0)
             {
-                _Output.Items.Add("Successful: " + x);
-            });
+                w.Result.ForEach(x =>
+                {
+                    _Output.Items.Add("Successful: " + x);
+                });
+            }
+            else
+            {
+                _Output.Items.Add("Task Completed, No Logins Found :(");
+            }
         }
 
         private void StopBtn_Click(object sender, EventArgs e)
@@ -97,6 +112,13 @@ namespace Brutus
         private void UndPlugsBtn_Click(object sender, EventArgs e)
         {
             Reflection.ModuleManager.UnloadModules();
+        }
+
+        private void LoadCmbsBtn_Click(object sender, EventArgs e)
+        {
+            ///too lazy to add checks
+            Utils.Utils.FileDialog.ShowDialog();
+            cCount.Text = Utils.Utils.ReadCombos(Utils.Utils.FileDialog.FileName).ToString();
         }
     }
 }

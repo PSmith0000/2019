@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Brutus
@@ -63,6 +64,7 @@ namespace Brutus
                     {
                         Logins.Add(login);
                     }
+                    Thread.Sleep(15);
                 });
                 MainUI.Notify.BalloonTipText = "Login(s) Found!";
                 MainUI.Notify.ShowBalloonTip(1000);

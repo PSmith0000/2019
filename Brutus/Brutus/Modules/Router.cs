@@ -29,8 +29,8 @@ namespace Brutus.Modules
             });
             message.Headers.Add("Authorization", "Basic " + auth);
             var response = http.SendAsync(message);
-
-            if (response.Result.StatusCode == HttpStatusCode.OK)
+            var r_msg = Encoding.Unicode.GetString(response.Result.Content.ReadAsByteArrayAsync().Result);
+            if (response.Result.StatusCode == HttpStatusCode.OK && !r_msg.Contains("recovery") && !r_msg.Contains("Unauth"))
             {
                 HEADER = null;
                 return Encoding.Default.GetString(Convert.FromBase64String(auth));

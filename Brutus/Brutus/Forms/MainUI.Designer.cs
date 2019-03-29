@@ -203,6 +203,7 @@
             this.LoadCmbsBtn.TabIndex = 3;
             this.LoadCmbsBtn.Text = "Load Combos";
             this.LoadCmbsBtn.UseVisualStyleBackColor = true;
+            this.LoadCmbsBtn.Click += new System.EventHandler(this.LoadCmbsBtn_Click);
             // 
             // label1
             // 
