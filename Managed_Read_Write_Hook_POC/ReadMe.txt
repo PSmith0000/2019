@@ -1,0 +1,1 @@
+Lazy and Quick Written Code Purely For Future Concept Use.
