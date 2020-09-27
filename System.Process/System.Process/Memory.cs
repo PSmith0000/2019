@@ -9,8 +9,19 @@ namespace System.Process
 {
     public class Memory
     {
-
+        public const string version = "v0.1";
         #region READ
+        public static T ReadStruct<T>(Objects.ProcessObject p_obj, IntPtr StructAdr) where T : struct
+        {
+            byte[] buffer = new byte[Marshal.SizeOf(typeof(T))];
+            Unmanaged.WinAPI.ReadProcessMemory(p_obj.Handle, StructAdr, buffer, buffer.Length, out buffer);
+
+            GCHandle handle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
+            T retVal = (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
+            handle.Free();
+            return retVal;
+        }
+
         public static T Read<T>(Objects.ProcessObject p_obj, IntPtr Address, int size = 4)
         {
             object value = null;

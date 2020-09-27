@@ -10,3 +10,9 @@ C:\Users\prest\Desktop\System.Process\System.Process\obj\Debug\System.Process.cs
 C:\Users\prest\Desktop\System.Process\System.Process\obj\Debug\System.Process.csproj.CoreCompileInputs.cache
 C:\Users\prest\Desktop\System.Process\System.Process\obj\Debug\System.Process.dll
 C:\Users\prest\Desktop\System.Process\System.Process\obj\Debug\System.Process.pdb
+C:\Users\Preston\Documents\GitHub\2019\System.Process\System.Process\bin\Debug\System.Process.dll
+C:\Users\Preston\Documents\GitHub\2019\System.Process\System.Process\bin\Debug\System.Process.pdb
+C:\Users\Preston\Documents\GitHub\2019\System.Process\System.Process\obj\Debug\System.Process.csprojAssemblyReference.cache
+C:\Users\Preston\Documents\GitHub\2019\System.Process\System.Process\obj\Debug\System.Process.csproj.CoreCompileInputs.cache
+C:\Users\Preston\Documents\GitHub\2019\System.Process\System.Process\obj\Debug\System.Process.dll
+C:\Users\Preston\Documents\GitHub\2019\System.Process\System.Process\obj\Debug\System.Process.pdb

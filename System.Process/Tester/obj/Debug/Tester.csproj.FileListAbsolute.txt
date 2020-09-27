@@ -24,3 +24,16 @@ C:\Users\prest\Desktop\System.Process\Tester\obj\Debug\Tester.csproj.CoreCompile
 C:\Users\prest\Desktop\System.Process\Tester\obj\Debug\Tester.csproj.CopyComplete
 C:\Users\prest\Desktop\System.Process\Tester\obj\Debug\Tester.exe
 C:\Users\prest\Desktop\System.Process\Tester\obj\Debug\Tester.pdb
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\bin\Debug\Tester.exe.config
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\bin\Debug\Tester.exe
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\bin\Debug\Tester.pdb
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\bin\Debug\System.Process.dll
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\bin\Debug\System.Process.pdb
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\obj\Debug\Tester.csprojAssemblyReference.cache
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\obj\Debug\Tester.Form1.resources
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\obj\Debug\Tester.Properties.Resources.resources
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\obj\Debug\Tester.csproj.GenerateResource.cache
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\obj\Debug\Tester.csproj.CoreCompileInputs.cache
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\obj\Debug\Tester.csproj.CopyComplete
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\obj\Debug\Tester.exe
+C:\Users\Preston\Documents\GitHub\2019\System.Process\Tester\obj\Debug\Tester.pdb
